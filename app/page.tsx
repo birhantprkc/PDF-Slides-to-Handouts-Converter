@@ -26,6 +26,7 @@ import { SlideSettingsOverrideMap } from "@/lib/outputPlan";
 import { SlideOverridePanel } from "@/components/SlideOverridePanel";
 import { detectRepeatedRegions, WhiteoutMap } from "@/lib/detectRepeatedRegions";
 import { Input } from "@/components/ui/input";
+import { recordHandoutGenerated } from "@/lib/stats";
 
 interface LoadedPdfMeta {
   name: string;
@@ -326,6 +327,7 @@ export default function HomePage() {
       a.download = `${baseName}_handout.pdf`;
       a.click();
       URL.revokeObjectURL(url);
+      recordHandoutGenerated();
     } catch (err) {
       console.error("Failed to generate handout", err);
       setAppError({

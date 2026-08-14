@@ -32,34 +32,36 @@ export function Header() {
           </div>
         </div>
 
-        {mounted && (
-          <div className="flex items-center gap-2 self-start rounded-xl border border-border bg-background/80 p-1.5 lg:self-center">
-            <Button
-              variant={theme === "light" ? "default" : "ghost"}
-              size="icon"
-              aria-label="Use light theme"
-              onClick={() => setTheme("light")}
-            >
-              <Sun className="h-4 w-4" />
-            </Button>
-            <Button
-              variant={theme === "system" ? "default" : "ghost"}
-              size="icon"
-              aria-label="Use system theme"
-              onClick={() => setTheme("system")}
-            >
-              <Monitor className="h-4 w-4" />
-            </Button>
-            <Button
-              variant={theme === "dark" ? "default" : "ghost"}
-              size="icon"
-              aria-label="Use dark theme"
-              onClick={() => setTheme("dark")}
-            >
-              <Moon className="h-4 w-4" />
-            </Button>
-          </div>
-        )}
+        <div className="self-start lg:self-center">
+          {mounted && (
+            <div className="flex items-center gap-2 rounded-xl border border-border bg-background/80 p-1.5">
+              <Button
+                variant={theme === "light" ? "default" : "ghost"}
+                size="icon"
+                aria-label="Use light theme"
+                onClick={() => setTheme("light")}
+              >
+                <Sun className="h-4 w-4" />
+              </Button>
+              <Button
+                variant={theme === "system" ? "default" : "ghost"}
+                size="icon"
+                aria-label="Use system theme"
+                onClick={() => setTheme("system")}
+              >
+                <Monitor className="h-4 w-4" />
+              </Button>
+              <Button
+                variant={theme === "dark" ? "default" : "ghost"}
+                size="icon"
+                aria-label="Use dark theme"
+                onClick={() => setTheme("dark")}
+              >
+                <Moon className="h-4 w-4" />
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );

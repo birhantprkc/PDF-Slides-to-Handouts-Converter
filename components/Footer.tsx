@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { HandOutStats } from "@/components/HandOutStats";
 
 export function Footer() {
   return (
     <footer className="mt-12 border-t border-border bg-card/60 text-foreground">
-      <div className="container flex flex-col items-start justify-between gap-5 py-8 md:flex-row md:items-center">
+      <div className="container flex flex-col items-start justify-between gap-5 py-8 lg:flex-row lg:items-center">
         <div className="space-y-1">
           <p className="text-base leading-tight">
             Sponsored by{" "}
@@ -20,7 +21,9 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">© 2026. All rights reserved.</p>
         </div>
 
-        <div className="text-base md:text-right">
+        <HandOutStats />
+
+        <div className="text-base lg:text-right">
           <p className="text-sm">
             This project is open source, view it
             {" "}

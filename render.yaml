@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: hand-outs-stats-api
+    runtime: node
+    plan: free
+    rootDir: stats-api
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
+      - key: ALLOWED_ORIGIN
+        value: "https://hand-outs.com,https://www.hand-outs.com,http://localhost:3000,http://localhost:3001"
+      - key: PROJECT_ID
+        value: "hand-outs"
+      - key: NODE_VERSION
+        value: "20"
